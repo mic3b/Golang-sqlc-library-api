@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS "schema_migrations" (version varchar(128) primary key);
+CREATE TABLE book (
+  id INTEGER PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  author_id INTEGER,
+  FOREIGN KEY (author_id) REFERENCES author(id)
+);
+CREATE TABLE author (
+  id INTEGER PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Dbmate schema migrations
+INSERT INTO "schema_migrations" (version) VALUES
+  ('20241117142512'),
+  ('20241117151128'),
+  ('20241117153419'),
+  ('20241117153457'),
+  ('20241117153756'),
+  ('20241117154419'),
+  ('20241117154514'),
+  ('20241117160346'),
+  ('20241117160418'),
+  ('20241117160622'),
+  ('20241117160649');

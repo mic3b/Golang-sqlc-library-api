@@ -1,0 +1,12 @@
+-- migrate:up
+DROP TABLE book;
+
+
+-- migrate:down
+CREATE TABLE IF NOT EXISTS book (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

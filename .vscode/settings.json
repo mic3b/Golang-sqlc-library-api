@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:go-dbmate-sqlc}/db/database.sqlite3",
+            "name": "sqlc-dbmate",
+            "group": "tutorial"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
